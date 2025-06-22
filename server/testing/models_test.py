@@ -15,7 +15,7 @@ def test_create_session(test_client):
     db.session.add(event)
     db.session.commit()
 
-    session = Session(title="AI in 2024", start_time=datetime.datetime(2024, 6, 1, 10, 0), event=event)
+    session = Session(title="AI in 2024", start_time=datetime(2024, 6, 1, 10, 0), event=event)
     db.session.add(session)
     db.session.commit()
 
@@ -41,7 +41,7 @@ def test_speaker_session_relationship(test_client):
     db.session.add(event)
     db.session.commit()
 
-    session = Session(title="Serverless Architectures", start_time=datetime.datetime(2024, 7, 1, 9, 0), event=event)
+    session = Session(title="Serverless Architectures", start_time=datetime(2024, 7, 1, 9, 0), event=event)
     speaker = Speaker(name="John Smith")
     db.session.add_all([session, speaker])
     db.session.commit()
